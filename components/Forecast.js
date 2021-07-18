@@ -1,16 +1,16 @@
 import React from "react"
-import { View ,Text } from "react-native";
+import { View ,Text, StyleSheet } from "react-native";
 
 export default function Forecast(props) {
     return (
-    <View >
+    <View>
+    <Text>{props.name}</Text>
     <Text>{props.main}</Text>
     <Text>{props.description}</Text>
-    <Text>{props.temp}</Text>
-    <Text>°C</Text>
-    <Text>tempmin {props.tempmin} °C</Text>
+    <Text>temp {props.temp} °C</Text>
+    <Text>tempmax {props.tempmax} °C</Text>
     <Text>tempmin {props.tempmin} °C</Text>
     </View>
-    )
+    );
    }
    

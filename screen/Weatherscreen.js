@@ -8,5 +8,5 @@ export default function WeatherScreen({route}){
         <View>
                 <Weather zipCode={route.params.zipCode}/>
         </View>
-    )
+    );
 }
