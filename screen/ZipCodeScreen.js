@@ -8,6 +8,11 @@ const availableZipItems = [
     { place: 'Chiangmai', code: '50000' },
     { place: 'Khonkaen', code: '40000' },
     { place: 'Chonburi', code: '20000' },
+    { place: 'SakonNakhon', code: '47000' },
+    { place: 'Sayaboury', code: '55000' },
+    { place: 'NakhonSawan', code: '62000' },
+    { place: 'SiSaKet', code: '35000' },
+    { place: 'ChiangMai', code: '58000' },
    ]
    const ZipItem = ({place, code, navigation}) => (
     <TouchableHighlight onPress= {() => {navigation.navigate('Weather', {zipCode: code})}} >
@@ -32,7 +37,8 @@ const availableZipItems = [
 const styles = StyleSheet.create({
     zipItem: {
     flex:1,
-    flexDirection:'row',
+    alignItems:'center',
+    flexDirection:'column',
     justifyContent:'center'
     },
     zipPlace: {
@@ -40,5 +46,9 @@ const styles = StyleSheet.create({
     },
     zipCode: {
     flex:1,
-    }
+    },
+    backdrop: {
+     width: '100%',
+    height: '100%'
+    },
    });

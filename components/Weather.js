@@ -10,7 +10,8 @@ export default function Weather(props) {
         tempmin: 0,
         tempmax: 0,
         country:'.....',
-        speedwind:0
+        speedwind:0,
+        icon: '....'
         }) 
     useEffect(() => {
         console.log(`fetching data with zipCode = ${props.zipCode}`)
@@ -25,7 +26,8 @@ export default function Weather(props) {
                         tempmax: json.main.temp_max,
                         tempmin: json.main.temp_min,
                         name: json.name,
-                        country: json.sys.country
+                        country: json.sys.country,
+                        icon: json.weather[0].icon
                 });
             })
         .catch((error) => {
