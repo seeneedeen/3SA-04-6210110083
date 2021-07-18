@@ -37,8 +37,8 @@ export default function Weather(props) {
     return (
         <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
             <View style = {styles.container}>
-                <Text >Zip Code</Text>
-                <Text>{props.zipCode}</Text>
+                <Text style = {styles.zipc}>Zip Code</Text>
+                <Text style = {styles.zipc}>{props.zipCode}</Text>
                 <Forecast {...forecastInfo} />
             </View>
         </ImageBackground>
@@ -59,6 +59,10 @@ export default function Weather(props) {
             flexDirection:'column',
             justifyContent:'center',
             alignItems:'center',
-            backgroundColor:'rgba(50,50,50,0.5)',
+            backgroundColor:'rgba(10,10,10,0.5)',
+        },
+        zipc : {
+            fontSize:20,
+            color:'white',
         },
        });
