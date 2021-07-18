@@ -1,5 +1,5 @@
 import React from "react"
-import { FlatList, Text, TouchableHighlight, View } from "react-native"
+import { FlatList, ImageBackground, Text, TouchableHighlight, View } from "react-native"
 import { useNavigation } from "@react-navigation/core"
 import {StyleSheet}  from 'react-native'
 const availableZipItems = [
@@ -26,11 +26,13 @@ const availableZipItems = [
    export default function ZipCodeScreen(){
     const navigation = useNavigation()
     return (
+    <ImageBackground source={require('../bg1.jpg')} style={styles.backdrop}>
     <FlatList
     data={availableZipItems}
     keyExtractor={_keyExtractor}
     renderItem={({item}) => <ZipItem {...item} navigation={navigation}/>}
     />
+    </ImageBackground>
     );
 }
 
