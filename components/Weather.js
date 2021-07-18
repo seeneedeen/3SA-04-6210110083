@@ -4,8 +4,13 @@ import Forecast from './Forecast';
 export default function Weather(props) {
     const [forecastInfo, setForecastInfo] = useState({
         main: 'laoding',
+        name: '.....',
         description: '....',
-        temp: 0
+        temp: 0,
+        tempmin: 0,
+        tempmax: 0,
+        country:'.....',
+        speedwind:0,
         }) 
     useEffect(() => {
         console.log(`fetching data with zipCode = ${props.zipCode}`)
@@ -16,7 +21,11 @@ export default function Weather(props) {
                     setForecastInfo({
                         main: json.weather[0].main,
                         description: json.weather[0].description,
-                        temp: json.main.temp
+                        temp: json.main.temp,
+                        tempmax: json.main.temp_max,
+                        tempmin: json.main.temp_min,
+                        name: json.name
+
                 });
             })
         .catch((error) => {
@@ -26,6 +35,7 @@ export default function Weather(props) {
         }, [props.zipCode])
     return (
         <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
+        <Text>{name}</Text>
         <Text>Zip Code</Text>
         <Text>{props.zipCode}</Text>
         <Forecast {...forecastInfo} />
